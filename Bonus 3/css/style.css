@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header{
+    padding: 28px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.input-area, 
+.single-input-area {
+    margin-top: 10px;
+    text-align: center;
+}
+
+input {
+    padding: 12px;
+    min-width: 300px;
+    font-size: 22px;
+    border-radius: 11px;
+    border: 1px solid black;
+}
+
+button {
+    font-size: 22px;
+    padding: 12px;
+    margin-left: 18px;
+    cursor: pointer;
+    border-radius: 11px;
+}
+
+.tasks {
+    margin: auto;
+    margin-top: 34px;
+    padding: 36px;
+    width: 60%;
+    background-color: rgb(238, 238, 238);
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    font-size: 22px;
+}
+
+/* .todo:hover {
+    background-color: white;
+} */
+
+.task-action {
+    float: right;
+}
+
+.task-action i {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
