@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vue JS Todolist - Milestone 3 - Bonus 1</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+    <div id="root">
+        <header>
+            <h1>To Do List</h1>
+        </header>
+    
+        <!-- Input Area -->
+        <main>
+            <div class="input-area">
+                <div class="single-input-area">
+                    <input v-model="newTaskText" @keyup.enter="addNewTask" type="text" placeholder="Nuovo Task">
+                    <button @click="addNewTask">Aggiungi</button>
+                </div>
+            </div> 
+            <!-- End Input Area -->  
+            
+            <!-- Tasks Area -->
+            <div class="tasks">
+                <ul>
+                    <li 
+                    v-for="(task, index) in tasks"
+                    class="task"
+                    :class="{'done': task.done}"
+                    >
+
+                    <span>
+                        {{task.text}} 
+                    </span>
+                
+                        <div @click="deleteTask(index)" class="task-action">
+                            <i class="fas fa-times"></i>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
