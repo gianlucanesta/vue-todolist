@@ -44,6 +44,7 @@ const app = new Vue (
                     this.tasks.push({
                         text: trimmednewTaskText,
                         done: false,
+                        visible:true,
                     });
                     this.newTaskText = '';  
                 }

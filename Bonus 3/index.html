@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 </head>
@@ -23,19 +26,21 @@
             <div class="input-area">
                 <div class="single-input-area">
                     <input v-model="newTaskText" @keyup.enter="addNewTask" type="text" placeholder="Nuovo Task">
-                    <button @click="addNewTask">Aggiungi</button>
+                    <button @click="addNewTask"><i class="fas fa-plus"></i> Aggiungi</button>
                 </div>
             </div> 
 
             <div class="single-input-area">
-                <label for=""><i class="fas fa-filter"></i></label>
-                <input placeholder="Filtra Tasks" v-model="userFilterText" @keyup="textFilter" type="text">
+                <label for=""><i class="fas fa-filter filter"></i></label>
+                <input @keyup="textFilter" v-model="userFilterText" type="text" placeholder="Filtra Tasks" >
             </div>
             <!-- End Input Area -->  
             
             <!-- Tasks Area -->
             <div class="tasks">
-                <ul>
+                <ul v-if="tasks.length > 0">
+
+                    <!-- Single Task -->
                     <li 
                     v-if="task.visible"
                     v-for="(task, index) in tasks"
@@ -43,16 +48,18 @@
                     :class="{'done': task.done}"
                     >
 
-                    <span @click="toggleDone(index)">
-                        {{task.text}} 
-                    </span>
-                
+                        <span @click="toggleDone(index)">
+                            {{task.text}} 
+                        </span>
+                    
                         <div @click="deleteTask(index)" class="task-action">
                             <i class="fas fa-times"></i>
                         </div>
 
                     </li>
+                    <!-- End Single Task -->
                 </ul>
+                <p v-else>Aggiungi un Task</p>
             </div>
         </main>
     </div>

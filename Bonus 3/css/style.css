@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -24,6 +25,13 @@ h1 {
     text-align: center;
 }
 
+.filter {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+
+
 input {
     padding: 12px;
     min-width: 300px;
@@ -33,6 +41,8 @@ input {
 }
 
 button {
+    background-color: rgb(66, 66, 66);
+    color: white;
     font-size: 22px;
     padding: 12px;
     margin-left: 18px;
@@ -54,8 +64,8 @@ button {
     font-size: 22px;
 }
 
-/* .todo:hover {
-    background-color: white;
+/* .task:hover {
+    background-color: darkgray;
 } */
 
 .task-action {
